@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB SLIDER</title>
+    <style>
+        header, .wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 14em;
+            margin: auto;
+            background-color: rgb(177, 179, 184);
+            padding: 2em;
+            border-radius: 10px;
+            margin-bottom: 1em;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 0.6em;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RGB SLIDER</h1>
+    </header>
+    <div class="container">
+        <input type="range" min="0" max="255" value="255" onmousemove="func_red(this.value)">
+        <input type="range" min="0" max="255" value="255" onmousemove="func_green(this.value)">
+        <input type="range" min="0" max="255" value="255" onmousemove="func_blue(this.value)">
+        <input type="range" min="0" max="10" value="10" onmousemove="func_alph(this.value)">
+        <div class="wrap">
+            <h2 id="text">255, 255, 255, 1</h2>
+        </div>
+    </div>
+
+    <script>
+        var red = 255;
+        var green = 255;
+        var blue = 255;
+        var alpha = 255;
+
+        function func_red(val) {
+            red = val;
+
+            changeColor();
+        }
+
+        function func_green(val) {
+            green = val;
+
+            changeColor();
+        }
+
+        function func_blue(val) {
+            blue = val;
+
+            changeColor();
+        }
+
+        function func_alph(val) {
+            alpha = val / 10;
+
+            changeColor();
+        }
+
+        function changeColor() {
+            document.body.style.backgroundColor = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+            document.getElementById('text').innerText = `${red}, ${green}, ${blue}, ${alpha}`;
+        }
+    </script>
+</body>
+</html>

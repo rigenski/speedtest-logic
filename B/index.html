@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-areas: "header header header nav1 nav2 nav3";
+            grid-auto-rows: 80px;
+            margin: auto;
+            width: 80%;
+        }
+
+        .container2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-areas: 
+            "title title title title side"
+            "meta main main main side"
+            "meta main main main ads"
+            "meta image image image ads"
+            "meta image image image other"
+            "meta image image image other"
+            "footer footer footer footer footer"
+            ;
+            grid-auto-rows: 80px;
+            margin: auto;
+            width: 80%;
+        }
+
+        .header {
+            grid-area: header;
+            padding: 1em;
+            background-color: rgb(247, 225, 104);
+        }
+
+        .nav1 {
+            grid-area: nav1;
+            padding: 1em;
+            background-color: pink;
+        }
+
+        .nav2 {
+            grid-area: nav2;
+            padding: 1em;
+            background-color: pink;
+        }
+
+        .nav3 {
+            grid-area: nav3;
+            padding: 1em;
+            background-color: pink;
+        }
+
+        .title {
+            grid-area: title;
+            padding: 1em;
+            background-color: rgb(111, 177, 238);
+        }
+
+        .side {
+            grid-area: side;
+            padding: 1em;
+            background-color: rgb(248, 174, 37);
+        }
+
+        .meta {
+            grid-area: meta;
+            padding: 1em;
+            background-color: rgb(107, 241, 107);
+        }
+
+        .main {
+            grid-area: main;
+            padding: 1em;
+            background-color: rgb(185, 182, 182);
+        }
+
+        .ads {
+            grid-area: ads;
+            padding: 1em;
+            background-color: rgb(20, 99, 20);
+        }
+
+        .image {
+            grid-area: image;
+            padding: 1em;
+            background-color: rgb(248, 248, 60);
+        }
+
+        .other {
+            grid-area: other;
+            padding: 1em;
+            background-color: rgb(214, 32, 214);
+        }
+
+        .footer {
+            grid-area: footer;
+            padding: 1em;
+            background-color: rgb(107, 84, 84);
+        }
+
+        @media screen and (max-width: 720px) {
+            .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "header"
+            "nav1"
+            "nav2"
+            "nav3"
+            ;
+            grid-auto-rows: 30px;
+            margin: auto;
+            width: 80%;
+        }
+
+        .container2 {
+            display: grid;
+            grid-template-columns: 1fr ;
+            grid-template-areas: 
+            "title"
+            "meta"
+            "meta"
+            "meta"
+            "meta"
+            "meta"
+            "main"
+            "main"
+            "image"
+            "image"
+            "image"
+            "side"
+            "side"
+            "ads"
+            "ads"
+            "other"
+            "other"
+            "footer"
+            ;
+            grid-auto-rows: 30px;
+            margin: auto;
+            width: 80%;
+        }
+
+        .container *, .container2 * {
+            padding: 0;
+        }
+
+        
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS GRID LAYOUT</h1>
+    </header>
+    <div class="container">
+        <div class="header">Site Title</div>
+        <div class="nav1">Nav 1</div>
+        <div class="nav2">Nav 2</div>
+        <div class="nav3">Nav 3</div>
+    </div>
+    <div class="container2">
+        <div class="title">Post Title</div>
+        <div class="side">Side Bar</div>
+        <div class="meta">Post Meta</div>
+        <div class="main">Main Content</div>
+        <div class="ads">Ads</div>
+        <div class="image">Main Content Image</div>
+        <div class="other">Other Stuffs</div>
+        <div class="footer">@2021 footer</div>
+    </div>
+</body>
+</html>
